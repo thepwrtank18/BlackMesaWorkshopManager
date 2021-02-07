@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackMesaWorkshopManager", "BlackMesaWorkshopManager.csproj", "{FD04E2CF-BBE9-48C6-903F-ACBD44F69231}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD04E2CF-BBE9-48C6-903F-ACBD44F69231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD04E2CF-BBE9-48C6-903F-ACBD44F69231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD04E2CF-BBE9-48C6-903F-ACBD44F69231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD04E2CF-BBE9-48C6-903F-ACBD44F69231}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {794A6988-312F-4F68-A852-798017BCEA6F}
+	EndGlobalSection
+EndGlobal
