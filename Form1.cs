@@ -31,6 +31,29 @@ namespace BlackMesaWorkshopManager
                 enableCustom.Enabled = false;
 
             }
+
+            if (!Directory.Exists(@"./bmm_settings"))
+            {
+                Directory.CreateDirectory(@"./bmm_settings");
+            }
+
+            if (!File.Exists(@"./bmm_settings/workshop.txt")) // used to save settings on shutdown
+            {
+                isWorkshopDisabled.Checked = false;
+            }
+            else
+            {
+                isWorkshopDisabled.Checked = true;
+            }
+
+            if (!File.Exists(@"./bmm_settings/oldui.txt")) // used to save settings on shutdown
+            {
+                enableOldUI.Checked = false;
+            }
+            else
+            {
+                enableOldUI.Checked = true;
+            }
         }
 
         private void disableCustom_Click(object sender, EventArgs e)
@@ -49,6 +72,7 @@ namespace BlackMesaWorkshopManager
 
         private void launchGame_Click(object sender, EventArgs e)
         {
+            // this is some YandereDev style code over here
             if (isWorkshopDisabled.Checked && !enableOldUI.Checked) // if workshop is disabled and old ui is disabled
             {
                 ProcessStartInfo noWorkshopInfo = new ProcessStartInfo
@@ -89,10 +113,19 @@ namespace BlackMesaWorkshopManager
         private void isWorkshopDisabled_CheckedChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Workshop disabled/enabled, applying that");
-        }
+            if (File.Exists(@"./bmm_settings/workshop.txt"))
+            {
+                File.Delete(@"./bmm_settings/workshop.txt");
+            }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+            if (isWorkshopDisabled.Checked)
+            {
+                File.Create("./bmm_settings/workshop.txt").Dispose();
+            }
+            else if (!enableOldUI.Checked)
+            {
+                Console.WriteLine("Workshop disabled, doing nothing");
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -120,11 +153,6 @@ namespace BlackMesaWorkshopManager
             resetCustom.Enabled = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void aboutButton_Click(object sender, EventArgs e)
         {
             aboutForm f4 = new aboutForm();
@@ -134,6 +162,19 @@ namespace BlackMesaWorkshopManager
         private void enableOldUI_CheckedChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Old UI enabled/disabled, applying that");
+            if (File.Exists(@"./bmm_settings/oldui.txt"))
+            {
+                File.Delete(@"./bmm_settings/oldui.txt");
+            }
+
+            if (enableOldUI.Checked)
+            {
+                File.Create("./bmm_settings/oldui.txt").Dispose();
+            }
+            else if (!enableOldUI.Checked)
+            {
+                Console.WriteLine("Old UI disabled, doing nothing");
+            }
         }
     }
 }

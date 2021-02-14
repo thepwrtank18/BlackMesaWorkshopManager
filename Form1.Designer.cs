@@ -42,6 +42,7 @@ namespace BlackMesaWorkshopManager
             this.resetCustom = new System.Windows.Forms.CheckBox();
             this.aboutButton = new System.Windows.Forms.Button();
             this.enableOldUI = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +127,6 @@ namespace BlackMesaWorkshopManager
             this.label2.TabIndex = 7;
             this.label2.Text = "Make sure Steam is running before pressing Launch.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // createCustom
             // 
@@ -159,9 +159,9 @@ namespace BlackMesaWorkshopManager
             this.resetCustom.ForeColor = System.Drawing.SystemColors.ControlText;
             this.resetCustom.Location = new System.Drawing.Point(112, 308);
             this.resetCustom.Name = "resetCustom";
-            this.resetCustom.Size = new System.Drawing.Size(171, 19);
+            this.resetCustom.Size = new System.Drawing.Size(186, 19);
             this.resetCustom.TabIndex = 11;
-            this.resetCustom.Text = "My custom folder is broken";
+            this.resetCustom.Text = "My custom folder is broken ⚠";
             this.resetCustom.UseVisualStyleBackColor = true;
             this.resetCustom.CheckedChanged += new System.EventHandler(this.resetCustom_CheckedChanged);
             // 
@@ -183,17 +183,28 @@ namespace BlackMesaWorkshopManager
             this.enableOldUI.ForeColor = System.Drawing.SystemColors.ControlText;
             this.enableOldUI.Location = new System.Drawing.Point(112, 283);
             this.enableOldUI.Name = "enableOldUI";
-            this.enableOldUI.Size = new System.Drawing.Size(115, 19);
+            this.enableOldUI.Size = new System.Drawing.Size(130, 19);
             this.enableOldUI.TabIndex = 13;
-            this.enableOldUI.Text = "Enable the old UI";
+            this.enableOldUI.Text = "Enable the old UI ⚠";
             this.enableOldUI.UseVisualStyleBackColor = true;
             this.enableOldUI.CheckedChanged += new System.EventHandler(this.enableOldUI_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 418);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 15);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "⚠ - May break something";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.enableOldUI);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.resetCustom);
@@ -213,7 +224,6 @@ namespace BlackMesaWorkshopManager
             this.MinimumSize = new System.Drawing.Size(400, 500);
             this.Name = "Form1";
             this.Text = "Black Mesa Manager";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,6 +244,7 @@ namespace BlackMesaWorkshopManager
         private System.Windows.Forms.CheckBox resetCustom;
         private System.Windows.Forms.Button aboutButton;
         private System.Windows.Forms.CheckBox enableOldUI;
+        private System.Windows.Forms.Label label3;
     }
 }
 
