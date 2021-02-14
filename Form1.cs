@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable IDE1006 // pascal case is trash, camel case forever
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -16,23 +17,23 @@ namespace BlackMesaWorkshopManager
             }
             else
             {
-                Console.WriteLine("Black Mesa not there, disabling everything");
+                Console.WriteLine("Black Mesa not there, showing error");
                 Form2 f2 = new Form2();
                 f2.ShowDialog();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void disableCustom_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Work in progress!");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void enableCustom_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Work in progress!");
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void launchGame_Click(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {
@@ -53,12 +54,17 @@ namespace BlackMesaWorkshopManager
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void isWorkshopDisabled_CheckedChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Check box altered");
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

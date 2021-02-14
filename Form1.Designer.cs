@@ -50,7 +50,7 @@ namespace BlackMesaWorkshopManager
             this.disableCustom.TabIndex = 0;
             this.disableCustom.Text = "Disable Custom Folder";
             this.disableCustom.UseVisualStyleBackColor = true;
-            this.disableCustom.Click += new System.EventHandler(this.button1_Click);
+            this.disableCustom.Click += new System.EventHandler(this.disableCustom_Click);
             // 
             // button2
             // 
@@ -62,7 +62,7 @@ namespace BlackMesaWorkshopManager
             this.button2.TabIndex = 1;
             this.button2.Text = "Enable Custom Folder";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.enableCustom_Click);
             // 
             // button4
             // 
@@ -73,7 +73,7 @@ namespace BlackMesaWorkshopManager
             this.button4.TabIndex = 3;
             this.button4.Text = "Launch";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.launchGame_Click);
             // 
             // pictureBox1
             // 
@@ -83,6 +83,7 @@ namespace BlackMesaWorkshopManager
             this.pictureBox1.Size = new System.Drawing.Size(320, 35);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // checkBox1
             // 
@@ -94,7 +95,7 @@ namespace BlackMesaWorkshopManager
             this.checkBox1.TabIndex = 5;
             this.checkBox1.Text = "Disable workshop addons";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.isWorkshopDisabled_CheckedChanged);
             // 
             // label1
             // 
