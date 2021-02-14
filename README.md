@@ -12,4 +12,7 @@ How to install it:
 
 If you can't see the gif, you just drag and drop it into the Black Mesa install folder!
 
+How to use it:
+![Usage GIF](https://raw.githubusercontent.com/thepwrtank18/BlackMesaWorkshopManager/master/howtouse.gif)
+
 Fun fact: This used to be called Black Mesa Workshop Manager, but I decided Black Mesa Manager is better, but I don't want Visual Studio to yell at me so I'm keeping BlackMesaWorkshopManager.
