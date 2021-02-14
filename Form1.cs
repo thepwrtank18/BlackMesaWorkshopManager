@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BlackMesaWorkshopManager
@@ -9,6 +10,16 @@ namespace BlackMesaWorkshopManager
         public Form1()
         {
             InitializeComponent();
+            if (File.Exists("./bms.exe"))
+            {
+                Console.WriteLine("Black Mesa detected, continuing");
+            }
+            else
+            {
+                Console.WriteLine("Black Mesa not there, disabling everything");
+                Form2 f2 = new Form2();
+                f2.ShowDialog();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
