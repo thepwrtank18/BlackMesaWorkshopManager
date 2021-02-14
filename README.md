@@ -16,4 +16,6 @@ How to use it:
 
 ![Usage GIF](https://raw.githubusercontent.com/thepwrtank18/BlackMesaWorkshopManager/master/howtouse.gif)
 
+If you can't see the gif, you can use the guide [here](https://github.com/thepwrtank18/BlackMesaWorkshopManager/blob/master/howtouse.md).
+
 Fun fact: This used to be called Black Mesa Workshop Manager, but I decided Black Mesa Manager is better, but I don't want Visual Studio to yell at me so I'm keeping BlackMesaWorkshopManager.
