@@ -41,6 +41,7 @@ namespace BlackMesaWorkshopManager
             this.workshopPage = new System.Windows.Forms.Button();
             this.resetCustom = new System.Windows.Forms.CheckBox();
             this.aboutButton = new System.Windows.Forms.Button();
+            this.enableOldUI = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@ namespace BlackMesaWorkshopManager
             // 
             this.disableCustom.Enabled = false;
             this.disableCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disableCustom.Location = new System.Drawing.Point(122, 243);
+            this.disableCustom.Location = new System.Drawing.Point(122, 227);
             this.disableCustom.Name = "disableCustom";
             this.disableCustom.Size = new System.Drawing.Size(134, 41);
             this.disableCustom.TabIndex = 0;
@@ -60,7 +61,7 @@ namespace BlackMesaWorkshopManager
             // 
             this.enableCustom.Enabled = false;
             this.enableCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enableCustom.Location = new System.Drawing.Point(122, 196);
+            this.enableCustom.Location = new System.Drawing.Point(122, 180);
             this.enableCustom.Name = "enableCustom";
             this.enableCustom.Size = new System.Drawing.Size(134, 41);
             this.enableCustom.TabIndex = 1;
@@ -131,7 +132,7 @@ namespace BlackMesaWorkshopManager
             // 
             this.createCustom.Enabled = false;
             this.createCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createCustom.Location = new System.Drawing.Point(122, 149);
+            this.createCustom.Location = new System.Drawing.Point(122, 133);
             this.createCustom.Name = "createCustom";
             this.createCustom.Size = new System.Drawing.Size(134, 41);
             this.createCustom.TabIndex = 9;
@@ -144,7 +145,7 @@ namespace BlackMesaWorkshopManager
             this.workshopPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
             this.workshopPage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.workshopPage.ForeColor = System.Drawing.Color.White;
-            this.workshopPage.Location = new System.Drawing.Point(122, 102);
+            this.workshopPage.Location = new System.Drawing.Point(122, 86);
             this.workshopPage.Name = "workshopPage";
             this.workshopPage.Size = new System.Drawing.Size(134, 41);
             this.workshopPage.TabIndex = 10;
@@ -175,11 +176,25 @@ namespace BlackMesaWorkshopManager
             this.aboutButton.UseVisualStyleBackColor = true;
             this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
+            // enableOldUI
+            // 
+            this.enableOldUI.AutoSize = true;
+            this.enableOldUI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enableOldUI.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.enableOldUI.Location = new System.Drawing.Point(112, 283);
+            this.enableOldUI.Name = "enableOldUI";
+            this.enableOldUI.Size = new System.Drawing.Size(115, 19);
+            this.enableOldUI.TabIndex = 13;
+            this.enableOldUI.Text = "Enable the old UI";
+            this.enableOldUI.UseVisualStyleBackColor = true;
+            this.enableOldUI.CheckedChanged += new System.EventHandler(this.enableOldUI_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.enableOldUI);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.resetCustom);
             this.Controls.Add(this.workshopPage);
@@ -218,6 +233,7 @@ namespace BlackMesaWorkshopManager
         private System.Windows.Forms.Button workshopPage;
         private System.Windows.Forms.CheckBox resetCustom;
         private System.Windows.Forms.Button aboutButton;
+        private System.Windows.Forms.CheckBox enableOldUI;
     }
 }
 

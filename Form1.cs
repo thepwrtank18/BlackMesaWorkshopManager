@@ -49,46 +49,46 @@ namespace BlackMesaWorkshopManager
 
         private void launchGame_Click(object sender, EventArgs e)
         {
-            if (isWorkshopDisabled.Checked)
+            if (isWorkshopDisabled.Checked && !enableOldUI.Checked) // if workshop is disabled and old ui is disabled
             {
-                try
+                ProcessStartInfo noWorkshopInfo = new ProcessStartInfo
                 {
-                    ProcessStartInfo noWorkshopInfo = new ProcessStartInfo
-                    {
-                        FileName = @"bms.exe", // opens bms
-                        Arguments = @"+workshop_disable 1" // with the workshop disabled
-                    };
-                    Process.Start(noWorkshopInfo);
-                }
-                catch
-                {
-                    Console.WriteLine("Couldn't find Black Mesa. Almost as if I tried to warn the user!");
-                    throw;
-                }
-
+                    FileName = @"bms.exe", // opens bms
+                    Arguments = @"+workshop_disable 1" // with the workshop disabled
+                };
+                Process.Start(noWorkshopInfo);
             }
-            else
+            else if (!isWorkshopDisabled.Checked && !enableOldUI.Checked) // if workshop is enabled and old ui is disabled
             {
-                try
-                {
-                    ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
+                ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
                     {
                         FileName = @"bms.exe", // opens bms
                     };
                     Process.Start(withWorkshopInfo);
-                }
-                catch
+            }
+            else if (isWorkshopDisabled.Checked && enableOldUI.Checked) // if workshop is disabled and old ui is enabled
+            {
+                ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
                 {
-                    Console.WriteLine("Couldn't find Black Mesa. Almost as if I tried to warn the user!");
-                    throw;
-                }
-
+                    FileName = @"bms.exe", // opens bms
+                    Arguments = @"+workshop_disable 1 -oldgameui" // with the workshop disabled and using the old game ui
+                };
+                Process.Start(withWorkshopInfo);
+            }
+            else if (!isWorkshopDisabled.Checked && enableOldUI.Checked) // if workshop is enabled and old ui is enabled 
+            {
+                ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
+                {
+                    FileName = @"bms.exe", // opens bms
+                    Arguments = @"-oldgameui" // using the old game ui
+                };
+                Process.Start(withWorkshopInfo);
             }
         }
 
         private void isWorkshopDisabled_CheckedChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Check box altered");
+            Console.WriteLine("Workshop disabled/enabled, applying that");
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -129,6 +129,11 @@ namespace BlackMesaWorkshopManager
         {
             aboutForm f4 = new aboutForm();
             f4.ShowDialog();
+        }
+
+        private void enableOldUI_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Old UI enabled/disabled, applying that");
         }
     }
 }
