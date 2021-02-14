@@ -11,16 +11,6 @@ namespace BlackMesaWorkshopManager
         public Form1()
         {
             InitializeComponent();
-            if (File.Exists("./bms.exe"))
-            {
-                Console.WriteLine("Black Mesa detected, continuing");
-            }
-            else
-            {
-                Console.WriteLine("Black Mesa not there, showing error");
-                Form2 f2 = new Form2();
-                f2.ShowDialog();
-            }
         }
 
         private void disableCustom_Click(object sender, EventArgs e)
@@ -37,20 +27,38 @@ namespace BlackMesaWorkshopManager
         {
             if (checkBox1.Checked)
             {
-                ProcessStartInfo noWorkshopInfo = new ProcessStartInfo
+                try
                 {
-                    FileName = @"bms", // opens bms
-                    Arguments = @"+workshop_disable 1" // with the workshop disabled
-                };
-                Process.Start(noWorkshopInfo);
+                    ProcessStartInfo noWorkshopInfo = new ProcessStartInfo
+                    {
+                        FileName = @"bms.exe", // opens bms
+                        Arguments = @"+workshop_disable 1" // with the workshop disabled
+                    };
+                    Process.Start(noWorkshopInfo);
+                }
+                catch
+                {
+                    Console.WriteLine("Couldn't find Black Mesa. Almost as if I tried to warn the user!");
+                    throw;
+                }
+
             }
             else
             {
-                ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
+                try
                 {
-                    FileName = @"bms", // opens bms
-                };
-                Process.Start(withWorkshopInfo);
+                    ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
+                    {
+                        FileName = @"bms.exe", // opens bms
+                    };
+                    Process.Start(withWorkshopInfo);
+                }
+                catch
+                {
+                    Console.WriteLine("Couldn't find Black Mesa. Almost as if I tried to warn the user!");
+                    throw;
+                }
+
             }
         }
 
@@ -61,12 +69,12 @@ namespace BlackMesaWorkshopManager
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            Console.WriteLine("If you are seeing this, you are using a debugger or just viewing the code. Thank you for using this!");
+            Console.WriteLine("I made this in 5-6 hours, which isn't really much. Again, thanks for using the program!");
         }
     }
 }

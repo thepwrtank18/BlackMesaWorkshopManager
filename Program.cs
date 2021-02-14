@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace BlackMesaWorkshopManager
@@ -8,12 +10,31 @@ namespace BlackMesaWorkshopManager
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
+        public static Form NextMainWindow { get; set; }
+
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            {
+                if (File.Exists("./bms.exe"))
+                {
+                    NextMainWindow = new Form1();
+
+                    while (NextMainWindow != null)
+                    {
+                        var nextMainWindow = NextMainWindow;
+                        NextMainWindow = null;
+                        Console.WriteLine("Black Mesa detected, continuing");
+                        Application.Run(new Form1());
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Black Mesa not there, showing error");
+                    Application.Run(new Form2());
+                }
+            }
         }
     }
 }
