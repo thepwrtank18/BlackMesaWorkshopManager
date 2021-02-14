@@ -36,6 +36,7 @@ namespace BlackMesaWorkshopManager
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,9 +90,9 @@ namespace BlackMesaWorkshopManager
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(112, 333);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(119, 19);
+            this.checkBox1.Size = new System.Drawing.Size(161, 19);
             this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Disable workshop";
+            this.checkBox1.Text = "Disable workshop addons";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -106,11 +107,26 @@ namespace BlackMesaWorkshopManager
             this.label1.Text = "Manager";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 437);
+            this.label2.MaximumSize = new System.Drawing.Size(500, 20);
+            this.label2.MinimumSize = new System.Drawing.Size(480, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(480, 15);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Make sure Steam is running before pressing Launch.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox1);
@@ -138,6 +154,7 @@ namespace BlackMesaWorkshopManager
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -46,5 +46,10 @@ namespace BlackMesaWorkshopManager
         {
             Console.WriteLine("Check box altered");
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
