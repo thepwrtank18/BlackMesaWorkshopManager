@@ -6,9 +6,7 @@ What this does:
 * Allows you to turn off workshop addons
 * Allows you to turn off and on the custom folder
 
-How to use it:
-1. Put it in your Black Mesa install folder (steamapps/common/Black Mesa)
-2. Run it
-3. Profit!
+How to install it:
+![Installation GIF](https://raw.githubusercontent.com/thepwrtank18/BlackMesaWorkshopManager/master/howtoinstall.gif)
 
 Fun fact: This used to be called Black Mesa Workshop Manager, but I decided Black Mesa Manager is better, but I don't want Visual Studio to yell at me so I'm keeping BlackMesaWorkshopManager.
