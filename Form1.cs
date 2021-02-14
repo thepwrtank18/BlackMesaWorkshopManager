@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace BlackMesaWorkshopManager
@@ -11,16 +12,47 @@ namespace BlackMesaWorkshopManager
         public Form1()
         {
             InitializeComponent();
+            if (File.Exists(@"./bms/custom_disabled/bmm.txt"))
+            {
+                disableCustom.Enabled = false;
+            }
+            else
+            {
+                disableCustom.Enabled = true;
+            }
+
+            if (File.Exists(@"./bms/custom/bmm.txt"))
+            {
+                enableCustom.Enabled = false;
+            }
+            else
+            {
+                enableCustom.Enabled = true;
+            }
         }
 
         private void disableCustom_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Work in progress!");
+            Directory.Move(@"./bms/custom", @"./bms/custom_disabled"); // Moves files in the custom folder to the custom_disabled folder
+            using (FileStream fs = File.Create(@"./bms/custom_disabled/bmm.txt"))
+            {
+                Byte[] title = new UTF8Encoding(true).GetBytes("Automatically created by Black Mesa Manager.");
+            }
+
+            disableCustom.Enabled = false;
+            enableCustom.Enabled = true;
         }
 
         private void enableCustom_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Work in progress!");
+            Directory.Move(@"./bms/custom_disabled", @"./bms/custom"); // Moves files in the custom_disabled folder to the custom folder
+            using (FileStream fs = File.Create(@"./bms/custom/bmm.txt"))
+            {
+                Byte[] title = new UTF8Encoding(true).GetBytes("Automatically created by Black Mesa Manager.");
+            }
+
+            enableCustom.Enabled = false;
+            disableCustom.Enabled = true;
         }
 
         private void launchGame_Click(object sender, EventArgs e)

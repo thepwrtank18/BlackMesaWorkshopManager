@@ -31,7 +31,7 @@ namespace BlackMesaWorkshopManager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.disableCustom = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.enableCustom = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -52,17 +52,17 @@ namespace BlackMesaWorkshopManager
             this.disableCustom.UseVisualStyleBackColor = true;
             this.disableCustom.Click += new System.EventHandler(this.disableCustom_Click);
             // 
-            // button2
+            // enableCustom
             // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(238, 246);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Enable Custom Folder";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.enableCustom_Click);
+            this.enableCustom.Enabled = false;
+            this.enableCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enableCustom.Location = new System.Drawing.Point(238, 246);
+            this.enableCustom.Name = "enableCustom";
+            this.enableCustom.Size = new System.Drawing.Size(134, 41);
+            this.enableCustom.TabIndex = 1;
+            this.enableCustom.Text = "Enable Custom Folder";
+            this.enableCustom.UseVisualStyleBackColor = true;
+            this.enableCustom.Click += new System.EventHandler(this.enableCustom_Click);
             // 
             // button4
             // 
@@ -132,7 +132,7 @@ namespace BlackMesaWorkshopManager
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.enableCustom);
             this.Controls.Add(this.disableCustom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -150,7 +150,7 @@ namespace BlackMesaWorkshopManager
         #endregion
 
         private System.Windows.Forms.Button disableCustom;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button enableCustom;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox1;
