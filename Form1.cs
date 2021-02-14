@@ -111,12 +111,12 @@ namespace BlackMesaWorkshopManager
             Directory.CreateDirectory(@"./bms/custom/nonvpk/maps");      // creates the folder that non-vpk maps go in
             createCustom.Enabled = false;
             disableCustom.Enabled = true;
-            resetCustom.Enabled = true;
         }
 
         private void resetCustom_CheckedChanged(object sender, EventArgs e)
         {
             createCustom.Enabled = true;
+            createCustom.Text = "Repair Custom Folder";
             resetCustom.Enabled = false;
         }
     }

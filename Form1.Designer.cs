@@ -141,7 +141,6 @@ namespace BlackMesaWorkshopManager
             // workshopPage
             // 
             this.workshopPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
-            this.workshopPage.Enabled = false;
             this.workshopPage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.workshopPage.ForeColor = System.Drawing.Color.White;
             this.workshopPage.Location = new System.Drawing.Point(122, 102);
