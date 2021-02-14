@@ -2,18 +2,18 @@
 
 Ever hate having to see if your mods are causing a crash or if it's just Black Mesa? This is for you!
 
-What this does:
+ ## What this does
 * Allows you to turn off and on workshop addons (only all of them or nothing, unfortunately)
 * Allows you to turn off and on the custom folder (again, only all of them or nothing)
 * ~~Gives you an easy UI to browse through all your custom campaigns~~ (WIP)
 
-How to install it:
+## How to install
 
 ![Installation GIF](https://raw.githubusercontent.com/thepwrtank18/BlackMesaWorkshopManager/master/howtoinstall.gif)
 
 If you can't see the gif, you just drag and drop it into the Black Mesa install folder!
 
-How to use it:
+## How to use
 
 ![Usage GIF](https://raw.githubusercontent.com/thepwrtank18/BlackMesaWorkshopManager/master/howtouse.gif)
 
