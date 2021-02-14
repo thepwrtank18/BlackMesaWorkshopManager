@@ -10,3 +10,5 @@ How to use it:
 1. Put it in your Black Mesa install folder (steamapps/common/Black Mesa)
 2. Run it
 3. Profit!
+
+Fun fact: This used to be called Black Mesa Workshop Manager, but I decided Black Mesa Manager is better, but I don't want Visual Studio to yell at me so I'm keeping BlackMesaWorkshopManager.
