@@ -12,33 +12,29 @@ namespace BlackMesaWorkshopManager
         public Form1()
         {
             InitializeComponent();
-            if (File.Exists(@"./bms/custom_disabled/bmm.txt"))
+            if (Directory.Exists(@"./bms/custom"))
             {
+                createCustom.Enabled = false;
+                enableCustom.Enabled = false;
+                disableCustom.Enabled = true;
+            }
+            else if (Directory.Exists(@"./bms/custom_disabled"))
+            {
+                createCustom.Enabled = false;
+                enableCustom.Enabled = true;
                 disableCustom.Enabled = false;
             }
             else
             {
-                disableCustom.Enabled = true;
-            }
-
-            if (File.Exists(@"./bms/custom/bmm.txt"))
-            {
+                createCustom.Enabled = true;
+                disableCustom.Enabled = false;
                 enableCustom.Enabled = false;
-            }
-            else
-            {
-                enableCustom.Enabled = true;
             }
         }
 
         private void disableCustom_Click(object sender, EventArgs e)
         {
             Directory.Move(@"./bms/custom", @"./bms/custom_disabled"); // Moves files in the custom folder to the custom_disabled folder
-            using (FileStream fs = File.Create(@"./bms/custom_disabled/bmm.txt"))
-            {
-                Byte[] title = new UTF8Encoding(true).GetBytes("Automatically created by Black Mesa Manager.");
-            }
-
             disableCustom.Enabled = false;
             enableCustom.Enabled = true;
         }
@@ -46,11 +42,6 @@ namespace BlackMesaWorkshopManager
         private void enableCustom_Click(object sender, EventArgs e)
         {
             Directory.Move(@"./bms/custom_disabled", @"./bms/custom"); // Moves files in the custom_disabled folder to the custom folder
-            using (FileStream fs = File.Create(@"./bms/custom/bmm.txt"))
-            {
-                Byte[] title = new UTF8Encoding(true).GetBytes("Automatically created by Black Mesa Manager.");
-            }
-
             enableCustom.Enabled = false;
             disableCustom.Enabled = true;
         }
@@ -107,6 +98,17 @@ namespace BlackMesaWorkshopManager
         {
             Console.WriteLine("If you are seeing this, you are using a debugger or just viewing the code. Thank you for using this!");
             Console.WriteLine("I made this in 5-6 hours, which isn't really much. Again, thanks for using the program!");
+        }
+
+        private void createCustom_Click(object sender, EventArgs e)
+        {
+            Directory.CreateDirectory(@"./bms/custom");
+            using (FileStream fs = File.Create(@"./bms/custom/bmm-DONOTDELETE.txt"))
+            {
+                Byte[] title = new UTF8Encoding(true).GetBytes("Automatically created by Black Mesa Manager.");
+            }
+            createCustom.Enabled = false;
+            disableCustom.Enabled = true;
         }
     }
 }

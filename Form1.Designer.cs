@@ -37,6 +37,7 @@ namespace BlackMesaWorkshopManager
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.createCustom = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,11 +123,24 @@ namespace BlackMesaWorkshopManager
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // createCustom
+            // 
+            this.createCustom.Enabled = false;
+            this.createCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createCustom.Location = new System.Drawing.Point(126, 199);
+            this.createCustom.Name = "createCustom";
+            this.createCustom.Size = new System.Drawing.Size(134, 41);
+            this.createCustom.TabIndex = 9;
+            this.createCustom.Text = "Create Custom Folder";
+            this.createCustom.UseVisualStyleBackColor = true;
+            this.createCustom.Click += new System.EventHandler(this.createCustom_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.createCustom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
@@ -156,6 +170,7 @@ namespace BlackMesaWorkshopManager
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button createCustom;
     }
 }
 
