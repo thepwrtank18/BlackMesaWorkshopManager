@@ -32,12 +32,14 @@ namespace BlackMesaWorkshopManager
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.disableCustom = new System.Windows.Forms.Button();
             this.enableCustom = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.launchGame = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.isWorkshopDisabled = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.createCustom = new System.Windows.Forms.Button();
+            this.workshopPage = new System.Windows.Forms.Button();
+            this.resetCustom = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@ namespace BlackMesaWorkshopManager
             // 
             this.disableCustom.Enabled = false;
             this.disableCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disableCustom.Location = new System.Drawing.Point(12, 246);
+            this.disableCustom.Location = new System.Drawing.Point(122, 243);
             this.disableCustom.Name = "disableCustom";
             this.disableCustom.Size = new System.Drawing.Size(134, 41);
             this.disableCustom.TabIndex = 0;
@@ -57,7 +59,7 @@ namespace BlackMesaWorkshopManager
             // 
             this.enableCustom.Enabled = false;
             this.enableCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enableCustom.Location = new System.Drawing.Point(238, 246);
+            this.enableCustom.Location = new System.Drawing.Point(122, 196);
             this.enableCustom.Name = "enableCustom";
             this.enableCustom.Size = new System.Drawing.Size(134, 41);
             this.enableCustom.TabIndex = 1;
@@ -65,16 +67,16 @@ namespace BlackMesaWorkshopManager
             this.enableCustom.UseVisualStyleBackColor = true;
             this.enableCustom.Click += new System.EventHandler(this.enableCustom_Click);
             // 
-            // button4
+            // launchGame
             // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(112, 358);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 41);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Launch";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.launchGame_Click);
+            this.launchGame.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.launchGame.Location = new System.Drawing.Point(12, 358);
+            this.launchGame.Name = "launchGame";
+            this.launchGame.Size = new System.Drawing.Size(360, 57);
+            this.launchGame.TabIndex = 3;
+            this.launchGame.Text = "Launch";
+            this.launchGame.UseVisualStyleBackColor = true;
+            this.launchGame.Click += new System.EventHandler(this.launchGame_Click);
             // 
             // pictureBox1
             // 
@@ -86,17 +88,18 @@ namespace BlackMesaWorkshopManager
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // checkBox1
+            // isWorkshopDisabled
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(112, 333);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(161, 19);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Disable workshop addons";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.isWorkshopDisabled_CheckedChanged);
+            this.isWorkshopDisabled.AutoSize = true;
+            this.isWorkshopDisabled.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isWorkshopDisabled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
+            this.isWorkshopDisabled.Location = new System.Drawing.Point(112, 333);
+            this.isWorkshopDisabled.Name = "isWorkshopDisabled";
+            this.isWorkshopDisabled.Size = new System.Drawing.Size(161, 19);
+            this.isWorkshopDisabled.TabIndex = 5;
+            this.isWorkshopDisabled.Text = "Disable workshop addons";
+            this.isWorkshopDisabled.UseVisualStyleBackColor = true;
+            this.isWorkshopDisabled.CheckedChanged += new System.EventHandler(this.isWorkshopDisabled_CheckedChanged);
             // 
             // label1
             // 
@@ -127,7 +130,7 @@ namespace BlackMesaWorkshopManager
             // 
             this.createCustom.Enabled = false;
             this.createCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createCustom.Location = new System.Drawing.Point(126, 199);
+            this.createCustom.Location = new System.Drawing.Point(122, 149);
             this.createCustom.Name = "createCustom";
             this.createCustom.Size = new System.Drawing.Size(134, 41);
             this.createCustom.TabIndex = 9;
@@ -135,17 +138,45 @@ namespace BlackMesaWorkshopManager
             this.createCustom.UseVisualStyleBackColor = true;
             this.createCustom.Click += new System.EventHandler(this.createCustom_Click);
             // 
+            // workshopPage
+            // 
+            this.workshopPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
+            this.workshopPage.Enabled = false;
+            this.workshopPage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workshopPage.ForeColor = System.Drawing.Color.White;
+            this.workshopPage.Location = new System.Drawing.Point(122, 102);
+            this.workshopPage.Name = "workshopPage";
+            this.workshopPage.Size = new System.Drawing.Size(134, 41);
+            this.workshopPage.TabIndex = 10;
+            this.workshopPage.Text = "Go to Workshop Page";
+            this.workshopPage.UseVisualStyleBackColor = false;
+            // 
+            // resetCustom
+            // 
+            this.resetCustom.AutoSize = true;
+            this.resetCustom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetCustom.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.resetCustom.Location = new System.Drawing.Point(112, 308);
+            this.resetCustom.Name = "resetCustom";
+            this.resetCustom.Size = new System.Drawing.Size(171, 19);
+            this.resetCustom.TabIndex = 11;
+            this.resetCustom.Text = "My custom folder is broken";
+            this.resetCustom.UseVisualStyleBackColor = true;
+            this.resetCustom.CheckedChanged += new System.EventHandler(this.resetCustom_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.resetCustom);
+            this.Controls.Add(this.workshopPage);
             this.Controls.Add(this.createCustom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.isWorkshopDisabled);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.launchGame);
             this.Controls.Add(this.enableCustom);
             this.Controls.Add(this.disableCustom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -165,12 +196,14 @@ namespace BlackMesaWorkshopManager
 
         private System.Windows.Forms.Button disableCustom;
         private System.Windows.Forms.Button enableCustom;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button launchGame;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox isWorkshopDisabled;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button createCustom;
+        private System.Windows.Forms.Button workshopPage;
+        private System.Windows.Forms.CheckBox resetCustom;
     }
 }
 

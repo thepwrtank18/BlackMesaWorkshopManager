@@ -29,6 +29,7 @@ namespace BlackMesaWorkshopManager
                 createCustom.Enabled = true;
                 disableCustom.Enabled = false;
                 enableCustom.Enabled = false;
+
             }
         }
 
@@ -48,7 +49,7 @@ namespace BlackMesaWorkshopManager
 
         private void launchGame_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if (isWorkshopDisabled.Checked)
             {
                 try
                 {
@@ -102,13 +103,21 @@ namespace BlackMesaWorkshopManager
 
         private void createCustom_Click(object sender, EventArgs e)
         {
-            Directory.CreateDirectory(@"./bms/custom");
-            using (FileStream fs = File.Create(@"./bms/custom/bmm-DONOTDELETE.txt"))
-            {
-                Byte[] title = new UTF8Encoding(true).GetBytes("Automatically created by Black Mesa Manager.");
-            }
+            Directory.CreateDirectory(@"./bms/custom");                  // creates the custom folder
+            Directory.CreateDirectory(@"./bms/custom/nonvpk");           // creates the folder that non-vpk mods go in
+            Directory.CreateDirectory(@"./bms/custom/nonvpk/models");    // creates the folder that non-vpk models go in
+            Directory.CreateDirectory(@"./bms/custom/nonvpk/materials"); // creates the folder that non-vpk materials go in
+            Directory.CreateDirectory(@"./bms/custom/nonvpk/particles"); // creates the folder that non-vpk particles go in
+            Directory.CreateDirectory(@"./bms/custom/nonvpk/maps");      // creates the folder that non-vpk maps go in
             createCustom.Enabled = false;
             disableCustom.Enabled = true;
+            resetCustom.Enabled = true;
+        }
+
+        private void resetCustom_CheckedChanged(object sender, EventArgs e)
+        {
+            createCustom.Enabled = true;
+            resetCustom.Enabled = false;
         }
     }
 }
