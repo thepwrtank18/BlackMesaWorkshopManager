@@ -16,6 +16,6 @@ If you get the latter screen, do what it says and put BMM in the Black Mesa dire
 * To disable the custom folder, go to the bottom button. 
 * To re-enable it, go to the "Enable Custom Folder" button. You can tell if it's on or off by checking if you can either enable or disable it.
 * To disable the Workshop, check the "Disable workshop addons" checkbox and press the Launch button.
-* To enable the old UI, check the "Enable the old UI" checkbox and press the Launch button.
+* To enable the old UI, check the "Enable the old UI" checkbox and press the Launch button. **Note: This is unsupported by Crowbar Collective, and can cause problems!**
 
 If you were to say to run anyway on the error screen, chances are it would break completely. Only do it if you absolutely know that Black Mesa is in the same directory as BMM.
