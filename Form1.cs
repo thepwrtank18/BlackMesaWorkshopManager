@@ -119,5 +119,16 @@ namespace BlackMesaWorkshopManager
             createCustom.Text = "Repair Custom Folder";
             resetCustom.Enabled = false;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            aboutForm f4 = new aboutForm();
+            f4.ShowDialog();
+        }
     }
 }

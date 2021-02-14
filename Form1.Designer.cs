@@ -40,6 +40,7 @@ namespace BlackMesaWorkshopManager
             this.createCustom = new System.Windows.Forms.Button();
             this.workshopPage = new System.Windows.Forms.Button();
             this.resetCustom = new System.Windows.Forms.CheckBox();
+            this.aboutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,11 +164,23 @@ namespace BlackMesaWorkshopManager
             this.resetCustom.UseVisualStyleBackColor = true;
             this.resetCustom.CheckedChanged += new System.EventHandler(this.resetCustom_CheckedChanged);
             // 
+            // aboutButton
+            // 
+            this.aboutButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutButton.Location = new System.Drawing.Point(297, 433);
+            this.aboutButton.Name = "aboutButton";
+            this.aboutButton.Size = new System.Drawing.Size(75, 23);
+            this.aboutButton.TabIndex = 12;
+            this.aboutButton.Text = "About...";
+            this.aboutButton.UseVisualStyleBackColor = true;
+            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.resetCustom);
             this.Controls.Add(this.workshopPage);
             this.Controls.Add(this.createCustom);
@@ -185,6 +198,7 @@ namespace BlackMesaWorkshopManager
             this.MinimumSize = new System.Drawing.Size(400, 500);
             this.Name = "Form1";
             this.Text = "Black Mesa Manager";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,6 +217,7 @@ namespace BlackMesaWorkshopManager
         private System.Windows.Forms.Button createCustom;
         private System.Windows.Forms.Button workshopPage;
         private System.Windows.Forms.CheckBox resetCustom;
+        private System.Windows.Forms.Button aboutButton;
     }
 }
 
