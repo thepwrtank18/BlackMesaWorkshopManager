@@ -10,7 +10,7 @@ Ever hate having to see if your mods are causing a crash or if it's just Black M
 
 ## How to install
 
-e![Installation GIF](https://raw.githubusercontent.com/thepwrtank18/BlackMesaWorkshopManager/master/howtoinstall.gif)
+![Installation GIF](https://raw.githubusercontent.com/thepwrtank18/BlackMesaWorkshopManager/master/howtoinstall.gif)
 
 If you can't see the gif, you just drag and drop it into the Black Mesa install folder!
 
