@@ -115,7 +115,7 @@ namespace BlackMesaWorkshopManager
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(147, 169);
+            this.label8.Location = new System.Drawing.Point(148, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 15);
             this.label8.TabIndex = 7;
@@ -136,7 +136,7 @@ namespace BlackMesaWorkshopManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 278);
+            this.ClientSize = new System.Drawing.Size(443, 278);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -148,8 +148,9 @@ namespace BlackMesaWorkshopManager
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 500);
-            this.MinimumSize = new System.Drawing.Size(401, 317);
+            this.MaximumSize = new System.Drawing.Size(459, 317);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(459, 317);
             this.Name = "aboutForm";
             this.ShowInTaskbar = false;
             this.Text = "About...";
