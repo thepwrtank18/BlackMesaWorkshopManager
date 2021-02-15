@@ -1,6 +1,6 @@
 # Black Mesa Manager
 
-[![Discord](https://img.shields.io/discord/810767519928549427?color=%237289DA)](https://discord.gg/XzQ4dEs5CE)
+[![Discord](https://img.shields.io/discord/810767519928549427?color=7289da&label=chat&style=for-the-badge)](https://discord.gg/XzQ4dEs5CE)
 ![Language](https://img.shields.io/badge/language-C%23-blue?style=for-the-badge)
 ![Framework](https://img.shields.io/badge/framework-.NET-blueviolet?style=for-the-badge)
 
