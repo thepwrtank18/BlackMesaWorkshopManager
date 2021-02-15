@@ -1,6 +1,8 @@
 # Black Mesa Manager
 
 [![Discord](https://img.shields.io/discord/810767519928549427?color=%237289DA)](https://discord.gg/XzQ4dEs5CE)
+![Language](https://img.shields.io/badge/language-C%23-blue)
+![Framework](https://img.shields.io/badge/framework-.NET-blueviolet)
 
 Ever hate having to see if your mods are causing a crash or if it's just Black Mesa? This is for you!
 
