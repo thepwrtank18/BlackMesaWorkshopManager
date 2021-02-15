@@ -18,3 +18,5 @@ namespace BlackMesaWorkshopManager
         }
     }
 }
+
+// What could be here?

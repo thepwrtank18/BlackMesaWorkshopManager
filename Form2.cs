@@ -12,20 +12,15 @@ namespace BlackMesaWorkshopManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Environment.Exit(2);
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            Console.WriteLine("Successfully loaded");
+            Environment.Exit(2); // Exits the program with code 2
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form1 f1 = new Form1();
-            Hide();
-            f1.ShowDialog();
-            Close();
+            Hide(); // Hides itself from sight to the user
+            f1.ShowDialog(); // Shows the main menu
+            Close(); // Closes itself
         }
     }
 }

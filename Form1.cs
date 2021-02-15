@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace BlackMesaWorkshopManager
@@ -12,19 +11,19 @@ namespace BlackMesaWorkshopManager
         public Form1()
         {
             InitializeComponent();
-            if (Directory.Exists(@"./bms/custom"))
+            if (Directory.Exists(@"./bms/custom")) // If the directory exists, you can disable it, but you can't create or enable it (it's already enabled).
             {
                 createCustom.Enabled = false;
                 enableCustom.Enabled = false;
                 disableCustom.Enabled = true;
             }
-            else if (Directory.Exists(@"./bms/custom_disabled"))
+            else if (Directory.Exists(@"./bms/custom_disabled")) // If the directory exists, you can enable it, but you can't create or disable it (it's already disabled).
             {
                 createCustom.Enabled = false;
                 enableCustom.Enabled = true;
                 disableCustom.Enabled = false;
             }
-            else
+            else // Otherwise, you can't disable or enable it, but you can create it.
             {
                 createCustom.Enabled = true;
                 disableCustom.Enabled = false;
@@ -34,10 +33,10 @@ namespace BlackMesaWorkshopManager
 
             if (!Directory.Exists(@"./bmm_settings"))
             {
-                Directory.CreateDirectory(@"./bmm_settings");
+                Directory.CreateDirectory(@"./bmm_settings"); // If the directory doesn't exist, make it.
             }
 
-            if (!File.Exists(@"./bmm_settings/workshop.txt")) // used to save settings on shutdown
+            if (!File.Exists(@"./bmm_settings/workshop.txt")) // Saves whether the workshop is enabled or not.
             {
                 isWorkshopDisabled.Checked = false;
             }
@@ -46,7 +45,7 @@ namespace BlackMesaWorkshopManager
                 isWorkshopDisabled.Checked = true;
             }
 
-            if (!File.Exists(@"./bmm_settings/oldui.txt")) // used to save settings on shutdown
+            if (!File.Exists(@"./bmm_settings/oldui.txt")) // Saves whether the old UI is enabled or not.
             {
                 enableOldUI.Checked = false;
             }
@@ -58,14 +57,14 @@ namespace BlackMesaWorkshopManager
 
         private void disableCustom_Click(object sender, EventArgs e)
         {
-            Directory.Move(@"./bms/custom", @"./bms/custom_disabled"); // Moves files in the custom folder to the custom_disabled folder
+            Directory.Move(@"./bms/custom", @"./bms/custom_disabled"); // Moves files in the custom folder to the custom_disabled folder.
             disableCustom.Enabled = false;
             enableCustom.Enabled = true;
         }
 
         private void enableCustom_Click(object sender, EventArgs e)
         {
-            Directory.Move(@"./bms/custom_disabled", @"./bms/custom"); // Moves files in the custom_disabled folder to the custom folder
+            Directory.Move(@"./bms/custom_disabled", @"./bms/custom"); // Moves files in the custom_disabled folder to the custom folder.
             enableCustom.Enabled = false;
             disableCustom.Enabled = true;
         }
@@ -73,7 +72,7 @@ namespace BlackMesaWorkshopManager
         private void launchGame_Click(object sender, EventArgs e)
         {
             // this is some YandereDev style code over here
-            if (isWorkshopDisabled.Checked && !enableOldUI.Checked) // if workshop is disabled and old ui is disabled
+            if (isWorkshopDisabled.Checked && !enableOldUI.Checked) // If the Workshop is disabled and the old UI is disabled
             {
                 ProcessStartInfo noWorkshopInfo = new ProcessStartInfo
                 {
@@ -82,7 +81,7 @@ namespace BlackMesaWorkshopManager
                 };
                 Process.Start(noWorkshopInfo);
             }
-            else if (!isWorkshopDisabled.Checked && !enableOldUI.Checked) // if workshop is enabled and old ui is disabled
+            else if (!isWorkshopDisabled.Checked && !enableOldUI.Checked) // If the Workshop is enabled and the old UI is disabled
             {
                 ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
                     {
@@ -90,7 +89,7 @@ namespace BlackMesaWorkshopManager
                     };
                     Process.Start(withWorkshopInfo);
             }
-            else if (isWorkshopDisabled.Checked && enableOldUI.Checked) // if workshop is disabled and old ui is enabled
+            else if (isWorkshopDisabled.Checked && enableOldUI.Checked) // if the Workshop is disabled and the old UI is enabled
             {
                 ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
                 {
@@ -99,7 +98,7 @@ namespace BlackMesaWorkshopManager
                 };
                 Process.Start(withWorkshopInfo);
             }
-            else if (!isWorkshopDisabled.Checked && enableOldUI.Checked) // if workshop is enabled and old ui is enabled 
+            else if (!isWorkshopDisabled.Checked && enableOldUI.Checked) // if the Workshop is enabled and the old UI is enabled 
             {
                 ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
                 {
@@ -118,11 +117,11 @@ namespace BlackMesaWorkshopManager
                 File.Delete(@"./bmm_settings/workshop.txt");
             }
 
-            if (isWorkshopDisabled.Checked)
+            if (isWorkshopDisabled.Checked) // If the workshop is disabled, create a txt file that the program will look for on startup
             {
                 File.Create("./bmm_settings/workshop.txt").Dispose();
             }
-            else if (!enableOldUI.Checked)
+            else if (!isWorkshopDisabled.Checked) // If not, just do nothing
             {
                 Console.WriteLine("Workshop disabled, doing nothing");
             }
@@ -148,15 +147,15 @@ namespace BlackMesaWorkshopManager
 
         private void resetCustom_CheckedChanged(object sender, EventArgs e)
         {
-            createCustom.Enabled = true;
-            createCustom.Text = "Repair Custom Folder";
-            resetCustom.Enabled = false;
+            createCustom.Enabled = true; // Allows you to click the "Create Custom Folder" button
+            createCustom.Text = "Repair Custom Folder"; // Renames it to "Repair Custom Folder"
+            resetCustom.Enabled = false; // Disables the ability to click on it again
         }
 
         private void aboutButton_Click(object sender, EventArgs e)
         {
             aboutForm f4 = new aboutForm();
-            f4.ShowDialog();
+            f4.ShowDialog(); // Shows a box tied to the main menu
         }
 
         private void enableOldUI_CheckedChanged(object sender, EventArgs e)
@@ -167,11 +166,11 @@ namespace BlackMesaWorkshopManager
                 File.Delete(@"./bmm_settings/oldui.txt");
             }
 
-            if (enableOldUI.Checked)
+            if (enableOldUI.Checked) // If the old ui is enabled, create a txt file that the program will look for on startup
             {
                 File.Create("./bmm_settings/oldui.txt").Dispose();
             }
-            else if (!enableOldUI.Checked)
+            else if (!enableOldUI.Checked) // If disabled, just do nothing
             {
                 Console.WriteLine("Old UI disabled, doing nothing");
             }
