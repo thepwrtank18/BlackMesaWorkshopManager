@@ -92,7 +92,7 @@ namespace BlackMesaWorkshopManager
             }; 
 
                 Process.Start(processInfo);
-            }
+        }
 
         private void isWorkshopDisabled_CheckedChanged(object sender, EventArgs e)
         {
