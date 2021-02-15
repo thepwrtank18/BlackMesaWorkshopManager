@@ -1,7 +1,7 @@
 # Black Mesa Manager
 
 <img alt="C#" src="https://img.shields.io/badge/c%23%20-%23239120.svg?&style=for-the-badge&logo=c-sharp&logoColor=white"/>
- | | Discord | <img alt="Discord" src="https://img.shields.io/badge/%3CServer%3E%20-%237289DA.svg?&style=for-the-badge&logo=discord&logoColor=white"/>
+<img alt="Discord" src="https://img.shields.io/badge/%3CServer%3E%20-%237289DA.svg?&style=for-the-badge&logo=discord&logoColor=white"/>
 
 Ever hate having to see if your mods are causing a crash or if it's just Black Mesa? This is for you!
 
