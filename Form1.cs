@@ -73,42 +73,24 @@ namespace BlackMesaWorkshopManager
 
         private void launchGame_Click(object sender, EventArgs e)
         {
-            // this is some YandereDev style code over here
-            if (isWorkshopDisabled.Checked && !enableOldUI.Checked) // If the Workshop is disabled and the old UI is disabled
-            {
-                ProcessStartInfo noWorkshopInfo = new ProcessStartInfo
-                {
-                    FileName = @"bms.exe", // opens bms
-                    Arguments = @"+workshop_disable 1" // with the workshop disabled
-                };
-                Process.Start(noWorkshopInfo);
-            }
-            else if (!isWorkshopDisabled.Checked && !enableOldUI.Checked) // If the Workshop is enabled and the old UI is disabled
-            {
-                ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
-                    {
-                        FileName = @"bms.exe", // opens bms
-                    };
-                    Process.Start(withWorkshopInfo);
-            }
-            else if (isWorkshopDisabled.Checked && enableOldUI.Checked) // if the Workshop is disabled and the old UI is enabled
-            {
-                ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
-                {
-                    FileName = @"bms.exe", // opens bms
-                    Arguments = @"+workshop_disable 1 -oldgameui" // with the workshop disabled and using the old game ui
-                };
-                Process.Start(withWorkshopInfo);
-            }
-            else if (!isWorkshopDisabled.Checked && enableOldUI.Checked) // if the Workshop is enabled and the old UI is enabled 
-            {
-                ProcessStartInfo withWorkshopInfo = new ProcessStartInfo
-                {
-                    FileName = @"bms.exe", // opens bms
-                    Arguments = @"-oldgameui" // using the old game ui
-                };
-                Process.Start(withWorkshopInfo);
-            }
+            string processParams = ""; 
+
+        if(isWorkshopDisabled.Checked)
+        {
+            processParams = processParams + "+workshop_disable 1 "
+        }
+        if(enableOldUI.Checked)
+        {
+            processParams = processParams + "-oldgameui "
+        } 
+
+        ProcessStartInfo processInfo = new ProcessStartInfo
+        {
+            FileName = @"bms.exe",
+            Arguments = processParams.Strip();
+        }; 
+
+            Process.Start(processInfo);
         }
 
         private void isWorkshopDisabled_CheckedChanged(object sender, EventArgs e)
