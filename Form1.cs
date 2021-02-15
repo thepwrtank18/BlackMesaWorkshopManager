@@ -72,26 +72,27 @@ namespace BlackMesaWorkshopManager
         }
 
         private void launchGame_Click(object sender, EventArgs e)
+        // thank rodrigovaz#2882 for the non-spaghetti code version
         {
             string processParams = ""; 
 
-        if(isWorkshopDisabled.Checked)
-        {
-            processParams = processParams + "+workshop_disable 1 "
-        }
-        if(enableOldUI.Checked)
-        {
-            processParams = processParams + "-oldgameui "
-        } 
+            if(isWorkshopDisabled.Checked)
+            {
+                processParams = processParams + "+workshop_disable 1 "
+            }
+            if(enableOldUI.Checked)
+            {
+                processParams = processParams + "-oldgameui "
+            } 
 
-        ProcessStartInfo processInfo = new ProcessStartInfo
-        {
-            FileName = @"bms.exe",
-            Arguments = processParams.Strip();
-        }; 
+            ProcessStartInfo processInfo = new ProcessStartInfo
+            {
+                FileName = @"bms.exe",
+                Arguments = processParams.Strip();
+            }; 
 
-            Process.Start(processInfo);
-        }
+                Process.Start(processInfo);
+            }
 
         private void isWorkshopDisabled_CheckedChanged(object sender, EventArgs e)
         {
