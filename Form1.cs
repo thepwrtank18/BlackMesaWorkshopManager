@@ -78,20 +78,19 @@ namespace BlackMesaWorkshopManager
 
             if(isWorkshopDisabled.Checked)
             {
-                processParams = processParams + "+workshop_disable 1 "
+                processParams = processParams + "+workshop_disable 1 ";
             }
             if(enableOldUI.Checked)
             {
-                processParams = processParams + "-oldgameui "
-            } 
+                processParams = processParams + "-oldgameui ";
+            }
 
             ProcessStartInfo processInfo = new ProcessStartInfo
             {
-                FileName = @"bms.exe",
-                Arguments = processParams.Strip();
-            }; 
-
-                Process.Start(processInfo);
+                FileName = @"bms.exe", // opens bms
+                Arguments = processParams
+            };
+            Process.Start(processInfo);
         }
 
         private void isWorkshopDisabled_CheckedChanged(object sender, EventArgs e)
