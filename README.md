@@ -23,3 +23,10 @@ If you can't see the gif, you just drag and drop it into the Black Mesa install 
 If you can't see the gif, you can use the guide [here](https://github.com/thepwrtank18/BlackMesaWorkshopManager/blob/master/howtouse.md).
 
 Fun fact: This used to be called Black Mesa Workshop Manager, but I decided Black Mesa Manager is better, but I don't want Visual Studio to yell at me so I'm keeping BlackMesaWorkshopManager.
+
+## How to build
+Simply download the code from GitHub, or put this in cmd:
+
+`git clone https://github.com/thepwrtank18/BlackMesaWorkshopManager.git`
+
+Editing can be done via Visual Studio, but JetBrains Rider is recommended.
