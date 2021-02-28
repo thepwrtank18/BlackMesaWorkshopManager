@@ -2,7 +2,7 @@
 
 Upon first launch, you will see either this screen:
 
-![BMM Menu](https://i.imgur.com/87GIHzy.png)
+![BMM Menu](https://i.imgur.com/ROY9dt3.png)
 
 or this screen:
 
