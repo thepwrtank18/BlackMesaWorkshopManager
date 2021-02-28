@@ -186,5 +186,16 @@ namespace BlackMesaWorkshopManager
                 Console.WriteLine("Old UI disabled, doing nothing");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5();
+            f5.ShowDialog(); // Shows the tools dialog
+        }
+
+        private void workshopPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -43,6 +43,7 @@ namespace BlackMesaWorkshopManager
             this.aboutButton = new System.Windows.Forms.Button();
             this.enableOldUI = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@ namespace BlackMesaWorkshopManager
             this.launchGame.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.launchGame.Location = new System.Drawing.Point(12, 358);
             this.launchGame.Name = "launchGame";
-            this.launchGame.Size = new System.Drawing.Size(360, 57);
+            this.launchGame.Size = new System.Drawing.Size(272, 39);
             this.launchGame.TabIndex = 3;
             this.launchGame.Text = "Launch";
             this.launchGame.UseVisualStyleBackColor = true;
@@ -151,6 +152,7 @@ namespace BlackMesaWorkshopManager
             this.workshopPage.TabIndex = 10;
             this.workshopPage.Text = "Go to Workshop Page";
             this.workshopPage.UseVisualStyleBackColor = false;
+            this.workshopPage.Click += new System.EventHandler(this.workshopPage_Click);
             // 
             // resetCustom
             // 
@@ -199,11 +201,23 @@ namespace BlackMesaWorkshopManager
             this.label3.TabIndex = 14;
             this.label3.Text = "⚠ - May break something";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(290, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 39);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Tools...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.enableOldUI);
             this.Controls.Add(this.aboutButton);
@@ -245,6 +259,7 @@ namespace BlackMesaWorkshopManager
         private System.Windows.Forms.Button aboutButton;
         private System.Windows.Forms.CheckBox enableOldUI;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
 
