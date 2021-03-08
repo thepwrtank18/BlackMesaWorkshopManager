@@ -34,9 +34,8 @@ Editing can (and should) be done via Visual Studio with C# support. [ReSharper](
 
 You might need the following NuGet packages:
 
-Costura Fody (used for containing everything in one exe) - https://www.nuget.org/packages/Costura.Fody/
-
-Ookii Dialogs (used for the Select Folder prompts) - https://www.nuget.org/packages/Ookii.Dialogs.WinForms/
+* Costura Fody (used for containing everything in one exe) - https://www.nuget.org/packages/Costura.Fody/
+* Ookii Dialogs (used for the Select Folder prompts) - https://www.nuget.org/packages/Ookii.Dialogs.WinForms/
 
 ## Upcoming features
 * The ability to turn specific VPK's on or off ([#2](https://github.com/thepwrtank18/BlackMesaWorkshopManager/issues/2))
