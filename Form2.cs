@@ -51,10 +51,46 @@ namespace BlackMesaWorkshopManager
                         var title = new UTF8Encoding(true).GetBytes(folderDlg.SelectedPath);
                         fs.Write(title, 0, title.Length);
                     }
+
                     Form1 f1 = new Form1();
                     Hide(); // Hides itself from sight to the user
                     f1.ShowDialog(); // Shows the main menu
                     Close(); // Closes itself
+                }
+            }
+            else if (result != DialogResult.Cancel)
+            {
+                FolderBrowserDialog oldFolderDlg = new FolderBrowserDialog();
+                oldFolderDlg.ShowNewFolderButton = true;
+                DialogResult oldResult = oldFolderDlg.ShowDialog();
+                if (oldResult == DialogResult.OK)
+                {
+                    Directory.SetCurrentDirectory(folderDlg.SelectedPath);
+                    {
+                        Directory.SetCurrentDirectory(folderDlg.SelectedPath);
+                        if (!File.Exists("./bms.exe"))
+                        {
+                            Console.WriteLine("Black Mesa not there, doing nothing");
+                            string message = "Black Mesa not found. Please choose a valid directory.";
+                            string title = "Error";
+                            MessageBoxButtons buttons = MessageBoxButtons.OK;
+                            DialogResult errorResult = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            var userDocFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                            using (FileStream fs = File.Create(userDocFolder + @"/bmm_globalsettings.txt"))
+                            {
+                                var title = new UTF8Encoding(true).GetBytes(folderDlg.SelectedPath);
+                                fs.Write(title, 0, title.Length);
+                            }
+
+                            Form1 f1 = new Form1();
+                            Hide(); // Hides itself from sight to the user
+                            f1.ShowDialog(); // Shows the main menu
+                            Close(); // Closes itself
+                        }
+                    }
                 }
             }
         }

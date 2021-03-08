@@ -57,6 +57,34 @@ namespace BlackMesaWorkshopManager
                     }
                 }
             }
+            else if (result != DialogResult.Cancel)
+            {
+                FolderBrowserDialog oldFolderDlg = new FolderBrowserDialog();
+                oldFolderDlg.ShowNewFolderButton = true;
+                DialogResult oldResult = oldFolderDlg.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    Directory.SetCurrentDirectory(oldFolderDlg.SelectedPath);
+                    if (!File.Exists("./bms.exe"))
+                    {
+                        Console.WriteLine("Black Mesa not there, doing nothing");
+                        string message = "Black Mesa not found. Please choose a valid directory.";
+                        string title = "Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        DialogResult errorResult = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Black Mesa detected");
+                        var userDocFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                        using (FileStream fs = File.Create(userDocFolder + @"/bmm_globalsettings.txt"))
+                        {
+                            var title = new UTF8Encoding(true).GetBytes(folderDlg.SelectedPath);
+                            fs.Write(title, 0, title.Length);
+                        }
+                    }
+                }
+            }
         }
     }
 }
