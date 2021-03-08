@@ -16,7 +16,7 @@ Ever hate having to see if your mods are causing a crash or if it's just Black M
 
 If you can't see the gif, you just drag and drop it into the Black Mesa install folder!
 
-*If you can't drag and drop it, put it in a location you like, run it, and say to go to the location you want.
+*If you can't drag and drop it, put it in a location you like, run it, and say to go to the location you want.*
 ## How to use
 
 ![Usage GIF](https://raw.githubusercontent.com/thepwrtank18/BlackMesaWorkshopManager/master/howtouse.gif)
