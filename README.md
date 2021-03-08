@@ -30,7 +30,7 @@ Simply download the code from GitHub, or put this in cmd:
 
 `git clone https://github.com/thepwrtank18/BlackMesaWorkshopManager.git`
 
-Editing can (and should) be done via Visual Studio with C# support.
+Editing can (and should) be done via Visual Studio with C# support. [ReSharper](https://jetbrains.com/resharper) is recommended.
 
 ## Upcoming features
 * The ability to turn specific VPK's on or off ([#2](https://github.com/thepwrtank18/BlackMesaWorkshopManager/issues/2))
