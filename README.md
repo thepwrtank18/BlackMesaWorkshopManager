@@ -39,4 +39,5 @@ Editing can (and should) be done via Visual Studio with C# support. [ReSharper](
 The following folders are used for setting storage:
 * The "bmm_settings" folder in the directory of bmm.exe to save settings on shutdown.
 * The user's Documents folder for storing the path to Black Mesa (if applicable).
+
 *It does not put anything in the registry and never will.*
