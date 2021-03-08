@@ -35,16 +35,27 @@ namespace BlackMesaWorkshopManager
             if (result == DialogResult.OK)
             {
                 Directory.SetCurrentDirectory(folderDlg.SelectedPath);
-                var userDocFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                using (FileStream fs = File.Create(userDocFolder + @"/bmm_globalsettings.txt"))
+                if (!File.Exists("./bms.exe"))
                 {
-                    var title = new UTF8Encoding(true).GetBytes(folderDlg.SelectedPath);
-                    fs.Write(title, 0, title.Length);
+                    Console.WriteLine("Black Mesa not there, doing nothing");
+                    string message = "Black Mesa not found. Please choose a valid directory.";
+                    string title = "Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult errorResult = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
                 }
-                Form1 f1 = new Form1();
-                Hide(); // Hides itself from sight to the user
-                f1.ShowDialog(); // Shows the main menu
-                Close(); // Closes itself
+                else
+                {
+                    var userDocFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    using (FileStream fs = File.Create(userDocFolder + @"/bmm_globalsettings.txt"))
+                    {
+                        var title = new UTF8Encoding(true).GetBytes(folderDlg.SelectedPath);
+                        fs.Write(title, 0, title.Length);
+                    }
+                    Form1 f1 = new Form1();
+                    Hide(); // Hides itself from sight to the user
+                    f1.ShowDialog(); // Shows the main menu
+                    Close(); // Closes itself
+                }
             }
         }
     }

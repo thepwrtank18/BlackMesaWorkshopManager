@@ -35,7 +35,16 @@ namespace BlackMesaWorkshopManager
                 {
                     string bmsDir = File.ReadAllText(userDocFolder + @"/bmm_globalsettings.txt");
                     Directory.SetCurrentDirectory(bmsDir);
-                    Application.Run(new Form1());
+                    if (!File.Exists("./bms.exe"))
+                    {
+                        Console.WriteLine("Black Mesa not there, showing error");
+                        Application.Run(new Form2());
+                    }
+                    else
+                    {
+                        Console.WriteLine("Black Mesa detected, continuing");
+                        Application.Run(new Form1());
+                    }
                 }
                 else
                 {
