@@ -12,10 +12,12 @@ namespace BlackMesaWorkshopManager
         /// </summary>
         public static Form NextMainWindow { get; set; }
 
+        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            var userDocFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             {
                 if (File.Exists("./bms.exe"))
                 {
@@ -28,6 +30,12 @@ namespace BlackMesaWorkshopManager
                         Console.WriteLine("Black Mesa detected, continuing");
                         Application.Run(new Form1());
                     }
+                }
+                else if (File.Exists(userDocFolder + @"/bmm_globalsettings.txt"))
+                {
+                    string bmsDir = File.ReadAllText(userDocFolder + @"/bmm_globalsettings.txt");
+                    Directory.SetCurrentDirectory(bmsDir);
+                    Application.Run(new Form1());
                 }
                 else
                 {
