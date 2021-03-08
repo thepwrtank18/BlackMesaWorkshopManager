@@ -2,13 +2,13 @@
 
 Upon first launch, you will see either this screen:
 
-![BMM Menu](https://i.imgur.com/87GIHzy.png)
+![BMM Menu](https://i.imgur.com/ROY9dt3.png)
 
 or this screen:
 
 ![BMM Error](https://i.imgur.com/XVTsBcy.png)
 
-If you get the latter screen, do what it says and put BMM in the Black Mesa directory. If you get the former, you have a few options.
+If you get the latter screen, do what it says and put BMM in the Black Mesa directory, or specify where Black Mesa is. If you get the former, you have a few options.
 
 * To visit the Steam Workshop, go to the top button. 
 * To create a custom folder, go to the Create Custom Folder button. 
