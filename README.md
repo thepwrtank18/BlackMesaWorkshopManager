@@ -32,6 +32,10 @@ Simply download the code from GitHub, or put this in cmd:
 
 Editing can (and should) be done via Visual Studio with C# support. [ReSharper](https://jetbrains.com/resharper) is recommended.
 
+You might need the following NuGet packages:
+Costura Fody (used for containing everything in one exe) - https://www.nuget.org/packages/Costura.Fody/
+Ookii Dialogs (used for the Select Folder prompts) - https://www.nuget.org/packages/Ookii.Dialogs.WinForms/
+
 ## Upcoming features
 * The ability to turn specific VPK's on or off ([#2](https://github.com/thepwrtank18/BlackMesaWorkshopManager/issues/2))
 
