@@ -1,7 +1,7 @@
 ﻿
 namespace BlackMesaWorkshopManager
 {
-    partial class Form2
+    partial class BlackMesaNotFound
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,18 @@ namespace BlackMesaWorkshopManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackMesaNotFound));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.taskDialog1 = new Ookii.Dialogs.WinForms.TaskDialog(this.components);
+            this.folderSelect = new Ookii.Dialogs.WinForms.TaskDialogButton(this.components);
+            this.notepadEdit = new Ookii.Dialogs.WinForms.TaskDialogButton(this.components);
+            this.closeWindow = new Ookii.Dialogs.WinForms.TaskDialogButton(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -93,6 +98,30 @@ namespace BlackMesaWorkshopManager
             this.linkLabel2.Text = "Locate directory";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // taskDialog1
+            // 
+            this.taskDialog1.Buttons.Add(this.folderSelect);
+            this.taskDialog1.Buttons.Add(this.notepadEdit);
+            this.taskDialog1.Buttons.Add(this.closeWindow);
+            this.taskDialog1.Content = "How would you like to change the directory?";
+            this.taskDialog1.EnableHyperlinks = true;
+            this.taskDialog1.FooterIcon = Ookii.Dialogs.WinForms.TaskDialogIcon.Information;
+            this.taskDialog1.MainInstruction = "taskDialog1";
+            this.taskDialog1.WindowIcon = ((System.Drawing.Icon)(resources.GetObject("taskDialog1.WindowIcon")));
+            this.taskDialog1.WindowTitle = "Set directory...";
+            // 
+            // folderSelect
+            // 
+            this.folderSelect.Text = "Select folder";
+            // 
+            // notepadEdit
+            // 
+            this.notepadEdit.Text = "Edit in Notepad";
+            // 
+            // closeWindow
+            // 
+            this.closeWindow.Text = "Cancel";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,5 +152,9 @@ namespace BlackMesaWorkshopManager
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private Ookii.Dialogs.WinForms.TaskDialog taskDialog1;
+        private Ookii.Dialogs.WinForms.TaskDialogButton folderSelect;
+        private Ookii.Dialogs.WinForms.TaskDialogButton notepadEdit;
+        private Ookii.Dialogs.WinForms.TaskDialogButton closeWindow;
     }
 }

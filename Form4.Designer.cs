@@ -29,6 +29,7 @@ namespace BlackMesaWorkshopManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aboutForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +41,11 @@ namespace BlackMesaWorkshopManager
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.taskDialog1 = new Ookii.Dialogs.WinForms.TaskDialog(this.components);
+            this.folderSelect = new Ookii.Dialogs.WinForms.TaskDialogButton(this.components);
+            this.notepadEdit = new Ookii.Dialogs.WinForms.TaskDialogButton(this.components);
+            this.testRadioDialog = new Ookii.Dialogs.WinForms.TaskDialogRadioButton(this.components);
+            this.taskDialogButton1 = new Ookii.Dialogs.WinForms.TaskDialogButton(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -144,6 +150,36 @@ namespace BlackMesaWorkshopManager
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // taskDialog1
+            // 
+            this.taskDialog1.Buttons.Add(this.folderSelect);
+            this.taskDialog1.Buttons.Add(this.notepadEdit);
+            this.taskDialog1.Buttons.Add(this.taskDialogButton1);
+            this.taskDialog1.Content = "How would you like to change the directory?";
+            this.taskDialog1.EnableHyperlinks = true;
+            this.taskDialog1.FooterIcon = Ookii.Dialogs.WinForms.TaskDialogIcon.Information;
+            this.taskDialog1.MainInstruction = "taskDialog1";
+            this.taskDialog1.RadioButtons.Add(this.testRadioDialog);
+            this.taskDialog1.WindowIcon = ((System.Drawing.Icon)(resources.GetObject("taskDialog1.WindowIcon")));
+            this.taskDialog1.WindowTitle = "Set directory...";
+            this.taskDialog1.ButtonClicked += new System.EventHandler<Ookii.Dialogs.WinForms.TaskDialogItemClickedEventArgs>(this.taskDialog1_ButtonClicked);
+            // 
+            // folderSelect
+            // 
+            this.folderSelect.Text = "Select folder";
+            // 
+            // notepadEdit
+            // 
+            this.notepadEdit.Text = "Edit in Notepad";
+            // 
+            // testRadioDialog
+            // 
+            this.testRadioDialog.Text = "Test";
+            // 
+            // taskDialogButton1
+            // 
+            this.taskDialogButton1.Text = "Cancel";
+            // 
             // aboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +220,10 @@ namespace BlackMesaWorkshopManager
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private Ookii.Dialogs.WinForms.TaskDialog taskDialog1;
+        private Ookii.Dialogs.WinForms.TaskDialogButton folderSelect;
+        private Ookii.Dialogs.WinForms.TaskDialogButton notepadEdit;
+        private Ookii.Dialogs.WinForms.TaskDialogRadioButton testRadioDialog;
+        private Ookii.Dialogs.WinForms.TaskDialogButton taskDialogButton1;
     }
 }

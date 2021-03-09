@@ -33,23 +33,32 @@ namespace BlackMesaWorkshopManager
                 }
                 else if (File.Exists(userDocFolder + @"/bmm_globalsettings.txt"))
                 {
-                    string bmsDir = File.ReadAllText(userDocFolder + @"/bmm_globalsettings.txt");
-                    Directory.SetCurrentDirectory(bmsDir);
-                    if (!File.Exists("./bms.exe"))
+                    if (new FileInfo(userDocFolder + @"/bmm_globalsettings.txt").Length == 0)
                     {
                         Console.WriteLine("Black Mesa not there, showing error");
-                        Application.Run(new Form2());
+                        Application.Run(new BlackMesaNotFound());
                     }
                     else
                     {
-                        Console.WriteLine("Black Mesa detected, continuing");
-                        Application.Run(new Form1());
+                        string bmsDir = File.ReadAllText(userDocFolder + @"/bmm_globalsettings.txt");
+                        Directory.SetCurrentDirectory(bmsDir);
+                        if (!File.Exists("./bms.exe"))
+                        {
+                            Console.WriteLine("Black Mesa not there, showing error");
+                            Application.Run(new BlackMesaNotFound());
+                        }
+                        else
+                        {
+                            Console.WriteLine("Black Mesa detected, continuing");
+                            Application.Run(new Form1());
+                        }
+
                     }
                 }
                 else
                 {
                     Console.WriteLine("Black Mesa not there, showing error");
-                    Application.Run(new Form2());
+                    Application.Run(new BlackMesaNotFound());
                 }
             }
         }

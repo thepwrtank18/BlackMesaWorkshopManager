@@ -32,39 +32,17 @@ namespace BlackMesaWorkshopManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            VistaFolderBrowserDialog folderDlg = new VistaFolderBrowserDialog();
-            folderDlg.ShowNewFolderButton = true;
-            DialogResult result = folderDlg.ShowDialog();
-            if (result == DialogResult.OK)
+            taskDialog1.MinimizeBox = false;
+            taskDialog1.EnableHyperlinks = true;
+            TaskDialogButton button = taskDialog1.ShowDialog(this);
+            if (button == folderSelect)
             {
-                Directory.SetCurrentDirectory(folderDlg.SelectedPath);
-                if (!File.Exists("./bms.exe"))
-                {
-                    Console.WriteLine("Black Mesa not there, doing nothing");
-                    string message = "Black Mesa not found. Please choose a valid directory.";
-                    string title = "Error";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    DialogResult errorResult = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    Console.WriteLine("Black Mesa detected");
-                    var userDocFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    using (FileStream fs = File.Create(userDocFolder + @"/bmm_globalsettings.txt"))
-                    {
-                        var title = new UTF8Encoding(true).GetBytes(folderDlg.SelectedPath);
-                        fs.Write(title, 0, title.Length);
-                    }
-                }
-            }
-            else if (result != DialogResult.Cancel)
-            {
-                FolderBrowserDialog oldFolderDlg = new FolderBrowserDialog();
-                oldFolderDlg.ShowNewFolderButton = true;
-                DialogResult oldResult = oldFolderDlg.ShowDialog();
+                VistaFolderBrowserDialog folderDlg = new VistaFolderBrowserDialog();
+                folderDlg.ShowNewFolderButton = true;
+                DialogResult result = folderDlg.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    Directory.SetCurrentDirectory(oldFolderDlg.SelectedPath);
+                    Directory.SetCurrentDirectory(folderDlg.SelectedPath);
                     if (!File.Exists("./bms.exe"))
                     {
                         Console.WriteLine("Black Mesa not there, doing nothing");
@@ -85,6 +63,25 @@ namespace BlackMesaWorkshopManager
                     }
                 }
             }
+            else if (button == notepadEdit)
+            {
+                var userDocFolder2 = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                if (!File.Exists(userDocFolder2 + @"/bmm_globalsettings.txt"))
+                {
+                    File.Create(userDocFolder2 + @"/bmm_globalsettings.txt").Dispose();
+                }
+                var bmsDir2 = userDocFolder2 + @"/bmm_globalsettings.txt";
+                Process.Start("notepad.exe", bmsDir2);
+            }
+            else if (button == taskDialogButton1)
+            {
+
+            }
+        }
+
+        private void taskDialog1_ButtonClicked(object sender, TaskDialogItemClickedEventArgs e)
+        {
+
         }
     }
 }
