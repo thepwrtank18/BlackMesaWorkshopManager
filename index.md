@@ -7,6 +7,8 @@ Ever hate having to see if your mods are causing a crash or if it's just Black M
 ## What this does
 * Allows you to turn off and on workshop addons (only all of them or nothing, unfortunately)
 * Allows you to turn off and on the custom folder (again, only all of them or nothing)
+* Can enable/disble the old UI
+* Can launch development tools like Hammer
 
 ## How to install
 
