@@ -46,5 +46,5 @@ The following folders are used for setting storage:
 *It does not put anything in the registry and never will.*
 
 
-#### Google Analytics
+### Google Analytics
 You can opt out <a href="javascript:gaOptout()">here.</a>
