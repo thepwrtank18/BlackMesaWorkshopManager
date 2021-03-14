@@ -1,3 +1,4 @@
 theme: jekyll-theme-modernist
 title: Black Mesa Manager
 description: A manager for Black Mesa mods.
+color_scheme: dark
