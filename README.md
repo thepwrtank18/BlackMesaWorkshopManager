@@ -1,3 +1,6 @@
+# This repository is outdated. Please go here: https://github.com/thepwrtank18/BlackMesaManager
+The source code here is corrupted lol
+
 # Black Mesa Manager
 
 [![Discord](https://img.shields.io/discord/810767519928549427?color=7289da&label=chat&style=for-the-badge&logo=discord)](https://discord.gg/XzQ4dEs5CE)
